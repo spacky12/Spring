@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="org.example"/>
+
+    <!-- Define bikes -->
+    <bean id="pulsar" class="org.example.Pulsar"/>
+    <bean id="ninja" class="org.example.Ninja"/>
+
+    <!-- App depends on Bike -->
+    <bean id="app" class="org.example.App">
+        <property name="bike" ref="ninja"/>   <!-- change this to pulsar without touching Java code -->
+    </bean>
+</beans>
