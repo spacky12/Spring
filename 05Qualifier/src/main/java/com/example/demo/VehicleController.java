@@ -10,7 +10,7 @@ public class VehicleController {
     Vehicle v1;
 
     @Autowired
-    VehicleController(@Qualifier("car") Vehicle v1)
+    VehicleController(@Qualifier("bike") Vehicle v1)
     {
         this.v1=v1;
     }
